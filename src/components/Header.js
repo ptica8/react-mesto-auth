@@ -1,7 +1,7 @@
 import React from 'react';
 import headerLogo from "../images/logo.svg";
 
-function Header() {
+function Header({children}) {
     return (
         <div className="header">
             <img
@@ -9,6 +9,7 @@ function Header() {
                 alt="Логотип"
                 className="header__logo"
             />
+            <div className="header__navigation">{children}</div>
         </div>
     )
 }

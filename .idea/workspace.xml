@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:develop" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="43a47e66-6e13-45da-90e7-07007dfa9a62" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/blocks/header/__email/header__email.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/header/__link/header__link.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/header/__navigation/header__navigation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__button/_type/_sign/popup__button_type_sign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__form-set/_type/_sign/popup__form-set_type_sign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__form/_type/_sign/popup__form_type_sign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__input-email/popup__input-email.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__input/_type/_sign/popup__input_type_sign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__signin/_link/popup__signin_link.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__signin/popup__signin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__welcome/popup__welcome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blocks/popup/_type/_sign/popup_type_sign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ProtectedRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blocks/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2BuBU2carkwrJbPfEuz2bjjTfXf" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="43a47e66-6e13-45da-90e7-07007dfa9a62" name="Default Changelist" comment="" />
+      <created>1657746101742</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657746101742</updated>
+      <workItem from="1657746105887" duration="4439000" />
+      <workItem from="1657789422056" duration="25128000" />
+      <workItem from="1657876200404" duration="9946000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="344" key="#ESLint" timestamp="1657877828361">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="667" y="344" key="#ESLint/0.0.1600.870@0.0.1600.870" timestamp="1657877828361" />
+    <state x="425" y="112" key="#Inspections" timestamp="1657877572490">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="425" y="112" key="#Inspections/0.0.1600.870@0.0.1600.870" timestamp="1657877572490" />
+    <state x="570" y="233" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1657793990446">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="570" y="233" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.870@0.0.1600.870" timestamp="1657793990446" />
+    <state x="529" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1657812157219">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="529" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.870@0.0.1600.870" timestamp="1657812157219" />
+    <state x="646" y="343" key="VCS.ChangelistChooser" timestamp="1657746886107">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="646" y="343" key="VCS.ChangelistChooser/0.0.1600.870@0.0.1600.870" timestamp="1657746886107" />
+  </component>
+</project>
