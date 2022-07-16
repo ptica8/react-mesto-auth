@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const Login = ({title, buttonText, handleLogin}) => {
     const [data, setData] = useState({
@@ -17,8 +16,8 @@ const Login = ({title, buttonText, handleLogin}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let { password, email } = data;
-        handleLogin(password, email);
+        let { email, password } = data;
+        handleLogin(email, password);
     }
 
     return (

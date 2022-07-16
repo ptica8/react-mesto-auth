@@ -10,6 +10,7 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import Register from './Register';
 import Login from './Login';
+import InfoTooltip from "./InfoTooltip";
 import * as auth from './auth.js';
 import {api} from '../utils/api.js';
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
@@ -18,20 +19,18 @@ function App() {
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isInfoTooltipPopupOpen, setInfoTooltipPopupOpen] = useState(false);
     const [cards, setCards] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
     const [isImagePopupOpen, setImagePopupOpen] = useState(false);
     const [currentUser, setCurrentUser] = useState({name: '', about: '', avatar: '', _id: ''});
     const [loggedIn, setLoggedIn] = useState(false); // false значит что когда только зашли-не залогинены
+    const [successIn, setSuccess] = useState(false);
     const [userData, setUserData] = useState({
-        password: '',
+        username: '',
         email: ''
     });
     const navigate = useNavigate();
-
-    useEffect(() => {
-        handleTokenCheck();
-    }, [])
 
     useEffect(() => {
         api.getUserInfo()
@@ -39,26 +38,29 @@ function App() {
                 setCurrentUser({name: userInfo.name, about: userInfo.about, avatar: userInfo.avatar, _id: userInfo._id})
             })
             .catch(err => console.log(err));
-    }, [])
+    }, [loggedIn])
 
     useEffect(() => {
-        api.getAllCards()
-            .then((cardsList) => {
-                setCards(cardsList);
-            })
-            .catch(err => console.log(err));
-    }, [])
+            api.getAllCards()
+                .then((cardsList) => {
+                    setCards(cardsList);
+                })
+                .catch(err => console.log(err));
+}, [loggedIn])
 
+
+    useEffect(() => {
+            handleTokenCheck();
+    }, [loggedIn])
 
     function handleTokenCheck() {
-        let jwt = localStorage.getItem('jwt');
+        let jwt = localStorage.getItem('token');
         if (jwt) {
             auth.getContent(jwt).then((res) => {
-                if (res.email) {
-                    localStorage.setItem('jwt', res.jwt);
+                if (res.data.email) {
                     setUserData({
-                        userData: res._id,
-                        email: res.email
+                        username: res.data._id,
+                        email: res.data.email
                     })
                     setLoggedIn(true);
                     navigate('/');
@@ -134,6 +136,10 @@ function App() {
             setIsEditProfilePopupOpen(true);
         }
 
+        function handleInfoTooltipPopup() {
+            setInfoTooltipPopupOpen(true);
+        }
+
         function handleAddPlaceClick() {
             setIsAddPlacePopupOpen(true);
         }
@@ -144,43 +150,57 @@ function App() {
             setIsAddPlacePopupOpen(false);
             setSelectedCard(null);
             setImagePopupOpen(false);
+            setInfoTooltipPopupOpen(false);
+        }
+
+        function closeInfoTooltip() {
+            closeAllPopups();
+            navigate('/signin');
         }
 
         function handleRegister(email, password) {
             auth.register(email, password)
-                .then((data) => {
-                    if (data.jwt) {
-                        console.log(data)
-                        localStorage.setItem('jwt', data.jwt);
+                .then((res) => {
+                    if (res.data.email) {
                         setUserData({
-                            userData: data.user._id,
-                            email: data.user.email
+                            username: res.data._id,
+                            email: res.data.email
                         })
                         setLoggedIn(true);
-                        navigate('/');
-                    }
+                }})
+                .then(() => {
+                    handleInfoTooltipPopup()
+                    setSuccess(true)
                 })
-                .catch((err) => console.log(err))
+                .catch(() => {
+                    handleInfoTooltipPopup()
+                    setSuccess(false)
+                })
         }
 
         function handleLogin(email, password) {
             auth.authorize(email, password)
                 .then(res => {
-                    if (res.jwt) {
-                        localStorage.setItem('jwt', res.jwt);
-                        setUserData({
-                            userData: res.user._id,
-                            email: res.user.email
-                        })
+                    if (res.token) {
+                        setInfoTooltipPopupOpen(false);
+                        localStorage.setItem('token', res.token);
                         setLoggedIn(true);
                         navigate('/');
                     }
                 })
-                .catch((err) => console.log(err))
+                .catch(() => {
+                    handleInfoTooltipPopup()
+                    setSuccess(false)
+                })
         }
 
         function handleLogOut() {
-
+            localStorage.removeItem('token'); // or clear()
+            setUserData({
+                username: '',
+                email: '',
+            })
+            setLoggedIn(false);
         }
 
         return (
@@ -190,14 +210,12 @@ function App() {
                         <Route path="/" element={
                             <>
                                 <Header>
-                                    <div>
                                         <p className="header__email">
                                             {userData.email}
                                         </p>
                                         <button className="header__exit" onClick={handleLogOut}>
                                             Выйти
                                         </button>
-                                    </div>
                                 </Header>
                                 <ProtectedRoute
                                     path="/"
@@ -247,21 +265,20 @@ function App() {
                             </>
                             }
                         />
-
-                        {/*<Route exact path="/" element={*/}
-                        {/*    loggedIn ? (*/}
-                        {/*            <Navigate to="/" />*/}
-                        {/*        ) : (*/}
-                        {/*            <Navigate to="/signin" />*/}
-                        {/*        )*/}
-                        {/*    }*/}
-                        {/*/>*/}
-
-                        {/*<Route path="*" element={*/}
-                        {/*        <Navigate to="/signin" />*/}
-                        {/*    }*/}
-                        {/*/>*/}
+                        <Route exact path="/" element={
+                            loggedIn ? (
+                                    <Navigate to="/" />
+                                ) : (
+                                    <Navigate to="/signin" />
+                                )
+                            }
+                        />
+                        <Route path="*" element={
+                                <Navigate to="/signin" />
+                            }
+                        />
                     </Routes>
+                    <InfoTooltip isOpen={isInfoTooltipPopupOpen} onClose={successIn ? closeInfoTooltip : closeAllPopups} successIn={successIn} />
                     <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}
                                       onUpdateUser={handleUpdateUser}/>
                     <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}
