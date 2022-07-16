@@ -45,7 +45,7 @@ const Register = ({title, buttonText, handleRegister}) => {
                         <input
                             id="password"
                             name="password"
-                            type="text"
+                            type="password"
                             className="popup__input popup__input_type_sign popup__input-password"
                             required=""
                             placeholder="Пароль"

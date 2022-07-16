@@ -18,8 +18,8 @@ function InfoTooltip(props) {
                         />
                         <p className="popup__box-notification_title">
                             {props.successIn
-                                ? "Вы успешно зарегистрировались!"
-                                : "Что-то пошло не так! Попробуйте еще раз."}
+                                ? props.textSuccess
+                                : props.textError}
                         </p>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes, Navigate, useNavigate, Link } from 'react-router-dom';
 import ProtectedRoute from "./ProtectedRoute";
 import Header from './Header';
@@ -11,7 +11,7 @@ import EditAvatarPopup from './EditAvatarPopup';
 import Register from './Register';
 import Login from './Login';
 import InfoTooltip from "./InfoTooltip";
-import * as auth from './auth.js';
+import * as auth from '../utils/auth.js';
 import {api} from '../utils/api.js';
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
 
@@ -33,20 +33,24 @@ function App() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        api.getUserInfo()
-            .then((userInfo) => {
-                setCurrentUser({name: userInfo.name, about: userInfo.about, avatar: userInfo.avatar, _id: userInfo._id})
-            })
-            .catch(err => console.log(err));
+        if (loggedIn === true) {
+            api.getUserInfo()
+                .then((userInfo) => {
+                    setCurrentUser({name: userInfo.name, about: userInfo.about, avatar: userInfo.avatar, _id: userInfo._id})
+                })
+                .catch(err => console.log(err));
+            }
     }, [loggedIn])
 
     useEffect(() => {
+        if (loggedIn === true) {
             api.getAllCards()
                 .then((cardsList) => {
                     setCards(cardsList);
                 })
                 .catch(err => console.log(err));
-}, [loggedIn])
+        }
+    }, [loggedIn])
 
 
     useEffect(() => {
@@ -65,7 +69,8 @@ function App() {
                     setLoggedIn(true);
                     navigate('/');
                 }
-            });
+            })
+                .catch(err => console.log(err));
         }
     }
 
@@ -278,7 +283,7 @@ function App() {
                             }
                         />
                     </Routes>
-                    <InfoTooltip isOpen={isInfoTooltipPopupOpen} onClose={successIn ? closeInfoTooltip : closeAllPopups} successIn={successIn} />
+                    <InfoTooltip isOpen={isInfoTooltipPopupOpen} onClose={successIn ? closeInfoTooltip : closeAllPopups} successIn={successIn} textSuccess="Вы успешно зарегистрировались!" textError="Что-то пошло не так! Попробуйте еще раз." />
                     <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}
                                       onUpdateUser={handleUpdateUser}/>
                     <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}
