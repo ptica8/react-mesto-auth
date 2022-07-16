@@ -25,20 +25,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43a47e66-6e13-45da-90e7-07007dfa9a62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/blocks/header/__exit/header__exit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__box-notification/_error/popup__box-notification_error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__box-notification/_success/popup__box-notification_success.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__box-notification/_title/popup__box-notification_title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blocks/popup/__box-notification/popup__box-notification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InfoTooltip.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/header/__email/header__email.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/__email/header__email.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blocks/header/__navigation/header__navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blocks/header/__navigation/header__navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +74,7 @@
       <workItem from="1657789422056" duration="25128000" />
       <workItem from="1657876200404" duration="16398000" />
       <workItem from="1657917174555" duration="2829000" />
-      <workItem from="1657958212532" duration="12547000" />
+      <workItem from="1657958212532" duration="14826000" />
     </task>
     <servers />
   </component>
